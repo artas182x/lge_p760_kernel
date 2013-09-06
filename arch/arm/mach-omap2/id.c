@@ -249,11 +249,10 @@ static void __init omap4_check_features(void)
 	case OMAP4_SILICON_TYPE_STANDARD:
 	default:
 		/* Standard device */
-		if (cpu_is_omap443x())
-			omap4_features |= OMAP4_HAS_MPU_1GHZ;
+		if (cpu_is_omap443x()) {
 			omap4_features |= OMAP4_HAS_MPU_1_2GHZ;
 			omap4_features |= OMAP4_HAS_IVA_430MHZ;
-		else if (cpu_is_omap446x()) {
+		} else if (cpu_is_omap446x()) {
 			omap4_features |= OMAP4_HAS_MPU_1_2GHZ;
 			omap4_features |= OMAP4_HAS_IVA_430MHZ;
 		} else if (cpu_is_omap447x()) {
